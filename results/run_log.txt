@@ -1,0 +1,130 @@
+
+TRUTH
+ {
+ "conv_control": 0.16238564584199303,
+ "conv_treated": 0.18820539109973,
+ "clv_visitor_control": 755.9123651020892,
+ "clv_visitor_treated": 847.2591941329888,
+ "clv_customer_control": 4655.044238562925,
+ "clv_customer_treated": 4501.779620563719,
+ "bands": {
+  "low": {
+   "conv_lift": 0.009327650770906387,
+   "clv_lift": 47.487176692196726,
+   "clv_customer_control": 5818.178460946576
+  },
+  "medium": {
+   "conv_lift": 0.03369576913711439,
+   "clv_lift": 152.92021326389954,
+   "clv_customer_control": 4486.525156109626
+  },
+  "high": {
+   "conv_lift": 0.03445927890210512,
+   "clv_lift": 73.70470104772264,
+   "clv_customer_control": 2291.787769890114
+  }
+ },
+ "conv_lift": 0.025819745257736976,
+ "clv_lift": 91.34682903089958
+}
+
+ARM TABLE
+       stage  control  treated  lift_pp  lift_ci_low_pp  lift_ci_high_pp  relative_lift
+0   applied   0.2881   0.3739    8.584          8.0027           9.1645         0.2980
+1  approved   0.2181   0.2728    5.466          4.9334           5.9982         0.2506
+2      drew   0.1633   0.1885    2.512          2.0402           2.9837         0.1538
+
+SINGLE WORLD
+ {
+ "per_visitor": {
+  "treated": 854.8043804078158,
+  "control": 754.5308757231354
+ },
+ "per_customer": {
+  "treated": 4535.73373876587,
+  "control": 4619.388243682719
+ },
+ "per_visitor_ci": {
+  "treated": [
+   818.4450724944604,
+   894.1283862734322
+  ],
+  "control": [
+   720.8515995626964,
+   795.7429351394055
+  ]
+ },
+ "per_customer_ci": {
+  "treated": [
+   4348.705722017965,
+   4728.127313535459
+  ],
+  "control": [
+   4417.686500182705,
+   4864.3071376001135
+  ]
+ },
+ "clv_lift": {
+  "naive": 75.02436654132327,
+  "complete_cohort": 95.8268134940032,
+  "partitioned": 100.27350468468035
+ },
+ "clv_lift_ci": [
+  44.25249790415782,
+  152.28771232015268
+ ],
+ "per_customer_diff_ci": [
+  -386.90183422560295,
+  157.41635977007948
+ ],
+ "share_offer_at_least_shown": 0.49710389324730553
+}
+
+SEGMENTS
+      band  visitors  conv_lift_pp  conv_ci_low_pp  conv_ci_high_pp  true_conv_lift_pp  clv_lift  clv_ci_low  clv_ci_high  true_clv_lift  true_clv_customer_control
+0     low     33343          1.23            0.32             2.13               0.93     88.89      -37.13       188.54          47.49                    5818.18
+1  medium     33410          3.45            2.62             4.28               3.37    195.60      101.87       274.29         152.92                    4486.53
+2    high     33247          2.91            2.23             3.59               3.45     17.90      -57.12       101.85          73.70                    2291.79
+
+MONTE CARLO
+ {
+ "n_worlds": 200,
+ "true_clv_lift": 91.34682903089958,
+ "estimators": {
+  "naive": {
+   "mean": 78.63711403678617,
+   "bias": -12.709714994113412,
+   "rmse": 26.077696306071825,
+   "sd": 22.770801246335637
+  },
+  "complete_cohort": {
+   "mean": 92.36340950342212,
+   "bias": 1.0165804725225343,
+   "rmse": 94.98555123634212,
+   "sd": 94.98011111708945
+  },
+  "partitioned": {
+   "mean": 93.77176072436525,
+   "bias": 2.424931693465666,
+   "rmse": 30.475689645663977,
+   "sd": 30.37906130315511
+  }
+ },
+ "coverage95_clv_partitioned_bootstrap": 0.915,
+ "mean_ci_width_clv": 112.64080810022259,
+ "coverage95_conversion_newcombe": 0.95
+}
+
+MODEL DEVELOPMENT: best q per sigma
+     sigma     q  conv_lift_pp  clv_lift
+7    0.45  0.40         2.454    81.451
+26   0.35  0.40         2.766    95.004
+44   0.25  0.35         3.159   111.130
+63   0.15  0.35         3.529   128.455
+
+MODEL DEVELOPMENT: q = 0.5
+     sigma    q  conv_lift_pp  clv_lift
+9    0.45  0.5         2.223    78.701
+28   0.35  0.5         2.578    91.007
+47   0.25  0.5         3.003   107.474
+66   0.15  0.5         3.447   126.029

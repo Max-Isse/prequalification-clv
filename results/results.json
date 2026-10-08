@@ -1,0 +1,222 @@
+{
+ "truth": {
+  "conv_control": 0.16238564584199303,
+  "conv_treated": 0.18820539109973,
+  "clv_visitor_control": 755.9123651020892,
+  "clv_visitor_treated": 847.2591941329888,
+  "clv_customer_control": 4655.044238562925,
+  "clv_customer_treated": 4501.779620563719,
+  "bands": {
+   "low": {
+    "conv_lift": 0.009327650770906387,
+    "clv_lift": 47.487176692196726,
+    "clv_customer_control": 5818.178460946576
+   },
+   "medium": {
+    "conv_lift": 0.03369576913711439,
+    "clv_lift": 152.92021326389954,
+    "clv_customer_control": 4486.525156109626
+   },
+   "high": {
+    "conv_lift": 0.03445927890210512,
+    "clv_lift": 73.70470104772264,
+    "clv_customer_control": 2291.787769890114
+   }
+  },
+  "conv_lift": 0.025819745257736976,
+  "clv_lift": 91.34682903089958
+ },
+ "single_world": {
+  "per_visitor": {
+   "treated": 854.8043804078158,
+   "control": 754.5308757231354
+  },
+  "per_customer": {
+   "treated": 4535.73373876587,
+   "control": 4619.388243682719
+  },
+  "per_visitor_ci": {
+   "treated": [
+    818.4450724944604,
+    894.1283862734322
+   ],
+   "control": [
+    720.8515995626964,
+    795.7429351394055
+   ]
+  },
+  "per_customer_ci": {
+   "treated": [
+    4348.705722017965,
+    4728.127313535459
+   ],
+   "control": [
+    4417.686500182705,
+    4864.3071376001135
+   ]
+  },
+  "clv_lift": {
+   "naive": 75.02436654132327,
+   "complete_cohort": 95.8268134940032,
+   "partitioned": 100.27350468468035
+  },
+  "clv_lift_ci": [
+   44.25249790415782,
+   152.28771232015268
+  ],
+  "per_customer_diff_ci": [
+   -386.90183422560295,
+   157.41635977007948
+  ],
+  "share_offer_at_least_shown": 0.49710389324730553
+ },
+ "arm_table": [
+  {
+   "stage": "applied",
+   "control": 0.28808,
+   "treated": 0.37392,
+   "lift_pp": 8.583999999999998,
+   "lift_ci_low_pp": 8.002713879494221,
+   "lift_ci_high_pp": 9.164475350853655,
+   "relative_lift": 0.2979727853374061
+  },
+  {
+   "stage": "approved",
+   "control": 0.21812,
+   "treated": 0.27278,
+   "lift_pp": 5.466000000000001,
+   "lift_ci_low_pp": 4.933418474924645,
+   "lift_ci_high_pp": 5.99819682163152,
+   "relative_lift": 0.2505960022006235
+  },
+  {
+   "stage": "drew",
+   "control": 0.16334,
+   "treated": 0.18846,
+   "lift_pp": 2.511999999999998,
+   "lift_ci_low_pp": 2.040247208929344,
+   "lift_ci_high_pp": 2.983678011395971,
+   "relative_lift": 0.15378964123913286
+  }
+ ],
+ "segments": [
+  {
+   "band": "low",
+   "visitors": 33343,
+   "conv_lift_pp": 1.2286661579551605,
+   "conv_ci_low_pp": 0.32477506267469397,
+   "conv_ci_high_pp": 2.1323377595506705,
+   "true_conv_lift_pp": 0.9327650770906387,
+   "clv_lift": 88.894615912483,
+   "clv_ci_low": -37.1282836134584,
+   "clv_ci_high": 188.5411351729296,
+   "true_clv_lift": 47.487176692196726,
+   "true_clv_customer_control": 5818.178460946576
+  },
+  {
+   "band": "medium",
+   "visitors": 33410,
+   "conv_lift_pp": 3.447459510558187,
+   "conv_ci_low_pp": 2.6175882845282445,
+   "conv_ci_high_pp": 4.277045071229037,
+   "true_conv_lift_pp": 3.369576913711439,
+   "clv_lift": 195.59718962569275,
+   "clv_ci_low": 101.86565044871828,
+   "clv_ci_high": 274.29002291344494,
+   "true_clv_lift": 152.92021326389954,
+   "true_clv_customer_control": 4486.525156109626
+  },
+  {
+   "band": "high",
+   "visitors": 33247,
+   "conv_lift_pp": 2.91259429228513,
+   "conv_ci_low_pp": 2.2315254688105846,
+   "conv_ci_high_pp": 3.594002077750813,
+   "true_conv_lift_pp": 3.445927890210512,
+   "clv_lift": 17.900640007671257,
+   "clv_ci_low": -57.12168291476241,
+   "clv_ci_high": 101.84658452367606,
+   "true_clv_lift": 73.70470104772264,
+   "true_clv_customer_control": 2291.787769890114
+  }
+ ],
+ "monte_carlo": {
+  "n_worlds": 200,
+  "true_clv_lift": 91.34682903089958,
+  "estimators": {
+   "naive": {
+    "mean": 78.63711403678617,
+    "bias": -12.709714994113412,
+    "rmse": 26.077696306071825,
+    "sd": 22.770801246335637
+   },
+   "complete_cohort": {
+    "mean": 92.36340950342212,
+    "bias": 1.0165804725225343,
+    "rmse": 94.98555123634212,
+    "sd": 94.98011111708945
+   },
+   "partitioned": {
+    "mean": 93.77176072436525,
+    "bias": 2.424931693465666,
+    "rmse": 30.475689645663977,
+    "sd": 30.37906130315511
+   }
+  },
+  "coverage95_clv_partitioned_bootstrap": 0.915,
+  "mean_ci_width_clv": 112.64080810022259,
+  "coverage95_conversion_newcombe": 0.95
+ },
+ "model_development_best": [
+  {
+   "sigma": 0.45,
+   "q": 0.4,
+   "conv_lift_pp": 2.454049391083249,
+   "clv_lift": 81.45080482690003
+  },
+  {
+   "sigma": 0.35,
+   "q": 0.4,
+   "conv_lift_pp": 2.765553027684611,
+   "clv_lift": 95.00411457985126
+  },
+  {
+   "sigma": 0.25,
+   "q": 0.35,
+   "conv_lift_pp": 3.159033687681925,
+   "clv_lift": 111.12988179217427
+  },
+  {
+   "sigma": 0.15,
+   "q": 0.35,
+   "conv_lift_pp": 3.529343280706482,
+   "clv_lift": 128.45535055210792
+  }
+ ],
+ "model_development_q50": [
+  {
+   "sigma": 0.45,
+   "q": 0.5,
+   "conv_lift_pp": 2.2232027211551624,
+   "clv_lift": 78.70137837366372
+  },
+  {
+   "sigma": 0.35,
+   "q": 0.5,
+   "conv_lift_pp": 2.5784071575318865,
+   "clv_lift": 91.0068424867593
+  },
+  {
+   "sigma": 0.25,
+   "q": 0.5,
+   "conv_lift_pp": 3.003254787535428,
+   "clv_lift": 107.47375421598872
+  },
+  {
+   "sigma": 0.15,
+   "q": 0.5,
+   "conv_lift_pp": 3.447227847533618,
+   "clv_lift": 126.02882554354142
+  }
+ ]
+}
